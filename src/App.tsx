@@ -6,6 +6,7 @@ import { createCustomTheme } from './theme/theme';
 // Components
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 
 // Sections
 import HeroSection from './sections/HeroSection/HeroSection';
@@ -38,6 +39,7 @@ const AppContent = () => {
         <ContactSection />
       </main>
       <Footer />
+      <ScrollToTop />
     </ThemeProvider>
   );
 };

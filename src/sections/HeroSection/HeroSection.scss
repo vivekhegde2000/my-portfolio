@@ -154,6 +154,17 @@
         color: white !important;
       }
     }
+
+    &--download {
+      border: 2px solid var(--color-success) !important;
+      color: var(--color-success) !important;
+      background: transparent !important;
+
+      &:hover {
+        background: var(--color-success) !important;
+        color: white !important;
+      }
+    }
   }
 
   &__social {

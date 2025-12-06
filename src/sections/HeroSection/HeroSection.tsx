@@ -4,6 +4,7 @@ import type { Variants } from 'framer-motion';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import EmailIcon from '@mui/icons-material/Email';
+import DownloadIcon from '@mui/icons-material/Download';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { personalInfo } from '../../data/data';
 import './HeroSection.scss';
@@ -31,6 +32,16 @@ const itemVariants: Variants = {
 const HeroSection = () => {
   const scrollToAbout = () => {
     document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handleDownloadCV = () => {
+    // Create a link to download the resume from public folder
+    const link = document.createElement('a');
+    link.href = '/resume.pdf';
+    link.download = 'Vivek_Hegde_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -90,6 +101,15 @@ const HeroSection = () => {
               className="hero__btn hero__btn--secondary"
             >
               View Projects
+            </Button>
+            <Button
+              variant="outlined"
+              size="large"
+              startIcon={<DownloadIcon />}
+              onClick={handleDownloadCV}
+              className="hero__btn hero__btn--download"
+            >
+              Download CV
             </Button>
           </motion.div>
 
