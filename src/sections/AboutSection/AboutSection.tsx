@@ -40,9 +40,30 @@ const AboutSection = () => {
     >
       <Box className="about">
         <Grid container spacing={4} alignItems="center">
-          <Grid size={{ xs: 12, lg: 6 }}>
+          {/* Profile Image */}
+          <Grid size={{ xs: 12, md: 5, lg: 4 }}>
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="about__image-wrapper"
+            >
+              <Box className="about__image-container">
+                <img 
+                  src="/profile.jpg" 
+                  alt="Vivek Hegde - Frontend Developer"
+                  className="about__image"
+                />
+                <Box className="about__image-decoration" />
+              </Box>
+            </motion.div>
+          </Grid>
+
+          {/* About Content */}
+          <Grid size={{ xs: 12, md: 7, lg: 8 }}>
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
@@ -67,37 +88,36 @@ const AboutSection = () => {
                   with the latest frontend technologies. When I'm not coding, I enjoy exploring 
                   new frameworks and contributing to team discussions on best practices.
                 </Typography>
+
+                {/* Highlight Cards */}
+                <Grid container spacing={2} className="about__highlights">
+                  {highlights.map((item, index) => (
+                    <Grid size={{ xs: 6, sm: 3 }} key={item.title}>
+                      <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: index * 0.1 }}
+                        viewport={{ once: true }}
+                      >
+                        <Card className="about__card glass-card">
+                          <CardContent>
+                            <Box className="about__card-icon">
+                              {item.icon}
+                            </Box>
+                            <Typography variant="h6" className="about__card-title">
+                              {item.title}
+                            </Typography>
+                            <Typography variant="body2" className="about__card-desc">
+                              {item.description}
+                            </Typography>
+                          </CardContent>
+                        </Card>
+                      </motion.div>
+                    </Grid>
+                  ))}
+                </Grid>
               </Box>
             </motion.div>
-          </Grid>
-
-          <Grid size={{ xs: 12, lg: 6 }}>
-            <Grid container spacing={2}>
-              {highlights.map((item, index) => (
-                <Grid size={{ xs: 6 }} key={item.title}>
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                  >
-                    <Card className="about__card glass-card">
-                      <CardContent>
-                        <Box className="about__card-icon">
-                          {item.icon}
-                        </Box>
-                        <Typography variant="h5" className="about__card-title">
-                          {item.title}
-                        </Typography>
-                        <Typography variant="body2" className="about__card-desc">
-                          {item.description}
-                        </Typography>
-                      </CardContent>
-                    </Card>
-                  </motion.div>
-                </Grid>
-              ))}
-            </Grid>
           </Grid>
         </Grid>
       </Box>
