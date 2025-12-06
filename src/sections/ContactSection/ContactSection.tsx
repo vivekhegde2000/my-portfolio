@@ -6,7 +6,6 @@ import {
   TextField,
   Button,
   Grid,
-  IconButton,
   Snackbar,
   Alert,
 } from '@mui/material';
@@ -14,8 +13,6 @@ import { motion } from 'framer-motion';
 import EmailIcon from '@mui/icons-material/Email';
 import PhoneIcon from '@mui/icons-material/Phone';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import GitHubIcon from '@mui/icons-material/GitHub';
 import SendIcon from '@mui/icons-material/Send';
 import SectionWrapper from '../../components/SectionWrapper/SectionWrapper';
 import { personalInfo } from '../../data/data';
@@ -115,32 +112,6 @@ const ContactSection = () => {
                       </Box>
                     </Box>
                   ))}
-                </Box>
-
-                <Box className="contact__social">
-                  <Typography variant="body2" className="contact__social-label">
-                    Follow me on
-                  </Typography>
-                  <Box className="contact__social-links">
-                    <IconButton
-                      component="a"
-                      href={personalInfo.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="contact__social-link"
-                    >
-                      <LinkedInIcon />
-                    </IconButton>
-                    <IconButton
-                      component="a"
-                      href="https://github.com/vivekhegde2000"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="contact__social-link"
-                    >
-                      <GitHubIcon />
-                    </IconButton>
-                  </Box>
                 </Box>
               </Box>
             </motion.div>
