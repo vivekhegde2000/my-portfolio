@@ -1,0 +1,217 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  &__background {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  &__gradient-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.5;
+    animation: float 8s ease-in-out infinite;
+
+    &--1 {
+      width: 400px;
+      height: 400px;
+      background: var(--color-primary);
+      top: -100px;
+      right: -100px;
+      animation-delay: 0s;
+    }
+
+    &--2 {
+      width: 300px;
+      height: 300px;
+      background: var(--color-secondary);
+      bottom: -50px;
+      left: -50px;
+      animation-delay: -3s;
+    }
+
+    &--3 {
+      width: 250px;
+      height: 250px;
+      background: var(--color-accent);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation-delay: -5s;
+      opacity: 0.3;
+    }
+  }
+
+  &__grid {
+    position: absolute;
+    inset: 0;
+    background-image: 
+      linear-gradient(var(--color-border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--color-border) 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: 0.5;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding-top: 80px;
+  }
+
+  &__text {
+    text-align: center;
+    max-width: 800px;
+  }
+
+  &__greeting {
+    font-size: 1.125rem;
+    color: var(--color-primary);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  &__name {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+
+  &__title {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    
+    .gradient-text {
+      display: inline-block;
+    }
+  }
+
+  &__summary {
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    
+    @media (min-width: 768px) {
+      font-size: 1.2rem;
+    }
+  }
+
+  &__cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+  }
+
+  &__btn {
+    padding: 0.875rem 2rem !important;
+    font-weight: 600 !important;
+    border-radius: var(--border-radius-md) !important;
+    text-transform: none !important;
+    font-size: 1rem !important;
+
+    &--primary {
+      background: var(--gradient-primary) !important;
+      color: white !important;
+      border: none !important;
+      box-shadow: var(--shadow-lg);
+      
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-glow);
+      }
+    }
+
+    &--secondary {
+      border: 2px solid var(--color-primary) !important;
+      color: var(--color-primary) !important;
+      background: transparent !important;
+
+      &:hover {
+        background: var(--color-primary) !important;
+        color: white !important;
+      }
+    }
+  }
+
+  &__social {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+  }
+
+  &__social-link {
+    width: 48px !important;
+    height: 48px !important;
+    border: 1px solid var(--color-border) !important;
+    color: var(--color-text-secondary) !important;
+    transition: all var(--transition-base) !important;
+    backdrop-filter: var(--blur-glass);
+    background: var(--color-bg-glass) !important;
+
+    &:hover {
+      border-color: var(--color-primary) !important;
+      color: var(--color-primary) !important;
+      transform: translateY(-3px);
+    }
+  }
+
+  &__scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    color: var(--color-text-muted);
+    transition: color var(--transition-fast);
+
+    &:hover {
+      color: var(--color-primary);
+    }
+
+    p {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &__scroll-arrow {
+    animation: float 2s ease-in-out infinite;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}

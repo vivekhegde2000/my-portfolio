@@ -1,0 +1,84 @@
+.awards {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  // Ensure motion.div wrapper takes full height
+  > div > div {
+    height: 100%;
+  }
+
+  &__card {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    height: 100%;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    transition: all var(--transition-base);
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--gradient-primary);
+      transform: scaleX(0);
+      transition: transform var(--transition-base);
+    }
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+
+      &::before {
+        transform: scaleX(1);
+      }
+
+      .awards__icon {
+        transform: scale(1.1) rotate(5deg);
+      }
+    }
+  }
+
+  &__icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #ffd700 0%, #ffb347 100%);
+    border-radius: 50%;
+    color: white;
+    transition: transform var(--transition-base);
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+    flex-shrink: 0;
+
+    svg {
+      font-size: 2rem;
+    }
+  }
+
+  &__title {
+    color: var(--color-text-primary);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    flex-shrink: 0;
+    min-height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__desc {
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    flex: 1;
+  }
+}

@@ -1,0 +1,68 @@
+.footer {
+  background: var(--color-bg-secondary);
+  padding: 2rem 0;
+
+  &__divider {
+    background: var(--color-border) !important;
+    margin-bottom: 2rem !important;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+  &__logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+
+  &__tagline {
+    color: var(--color-text-muted);
+    margin-top: 0.25rem;
+  }
+
+  &__social {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  &__social-link {
+    color: var(--color-text-secondary) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: all var(--transition-fast) !important;
+
+    &:hover {
+      color: var(--color-primary) !important;
+      border-color: var(--color-primary) !important;
+      transform: translateY(-3px);
+    }
+  }
+
+  &__copyright {
+    color: var(--color-text-muted);
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &__heart {
+    font-size: 1rem !important;
+    color: var(--color-secondary);
+    animation: pulse 1.5s infinite;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}

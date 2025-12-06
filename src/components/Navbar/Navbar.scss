@@ -1,0 +1,83 @@
+.navbar {
+  &__toolbar {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0.5rem 1.5rem;
+    
+    @media (min-width: 768px) {
+      padding: 0.5rem 2rem;
+    }
+  }
+
+  &__logo {
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  &__link {
+    position: relative;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    transition: color var(--transition-fast);
+    border-radius: var(--border-radius-sm);
+
+    &:hover {
+      color: var(--color-text-primary);
+      background: var(--color-border);
+    }
+
+    &--active {
+      color: var(--color-primary);
+      
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 20px;
+        height: 2px;
+        background: var(--gradient-primary);
+        border-radius: 1px;
+      }
+    }
+  }
+
+  &__theme-toggle {
+    color: var(--color-text-primary) !important;
+    background: var(--color-border) !important;
+    transition: all var(--transition-fast) !important;
+
+    &:hover {
+      background: var(--color-primary) !important;
+      color: white !important;
+    }
+  }
+
+  &__drawer {
+    height: 100%;
+    padding: 1rem;
+  }
+
+  &__drawer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: 1rem;
+  }
+}

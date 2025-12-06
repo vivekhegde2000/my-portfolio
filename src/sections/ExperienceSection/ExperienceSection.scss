@@ -1,0 +1,127 @@
+.experience {
+  max-width: 900px;
+  margin: 0 auto;
+
+  &__item {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+
+    &:last-child {
+      .experience__line {
+        display: none;
+      }
+    }
+  }
+
+  &__timeline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  &__dot {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    z-index: 1;
+    box-shadow: var(--shadow-glow);
+
+    svg {
+      font-size: 1.25rem;
+    }
+  }
+
+  &__line {
+    width: 2px;
+    flex-grow: 1;
+    background: linear-gradient(180deg, var(--color-primary) 0%, var(--color-border) 100%);
+    margin-top: 0.5rem;
+  }
+
+  &__content {
+    flex-grow: 1;
+    padding: 1.5rem;
+    
+    @media (min-width: 768px) {
+      padding: 2rem;
+    }
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    
+    @media (min-width: 768px) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+  }
+
+  &__title {
+    color: var(--color-text-primary);
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+
+  &__company {
+    color: var(--color-primary);
+    font-weight: 500;
+  }
+
+  &__period {
+    color: var(--color-text-muted);
+    font-weight: 500;
+    padding: 0.25rem 0.75rem;
+    background: var(--color-border);
+    border-radius: var(--border-radius-sm);
+    white-space: nowrap;
+  }
+
+  &__highlights {
+    margin-bottom: 1.5rem;
+  }
+
+  &__highlight {
+    color: var(--color-text-secondary);
+    padding-left: 1.25rem;
+    position: relative;
+    margin-bottom: 0.5rem;
+    line-height: 1.7;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.6em;
+      width: 6px;
+      height: 6px;
+      background: var(--color-primary);
+      border-radius: 50%;
+    }
+  }
+
+  &__tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  &__tech-chip {
+    background: rgba(99, 102, 241, 0.1) !important;
+    color: var(--color-primary) !important;
+    font-weight: 500 !important;
+    border: 1px solid var(--color-primary) !important;
+  }
+}
