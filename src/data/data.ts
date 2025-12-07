@@ -135,6 +135,7 @@ export const projects: Project[] = [
     technologies: ["React", "TypeScript", "Scss", "MUI", "Tailwind CSS", "React Dnd", "Dnd Sortable"],
     featured: true,
     githubUrl : "https://github.com/vivekhegde2000/kanban-board",
+    liveUrl : "https://viveks-kanban-board.netlify.app/"
   },
   {
     id: "proj-6",
