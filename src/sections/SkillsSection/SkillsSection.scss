@@ -1,11 +1,16 @@
 .skills {
   &__category {
-    padding: 1.5rem;
+    padding: 1.25rem;
     height: 100%;
-    min-height: 180px;
+    min-height: 160px;
     display: flex;
     flex-direction: column;
     transition: all var(--transition-base);
+
+    @media (min-width: 768px) {
+      padding: 1.5rem;
+      min-height: 180px;
+    }
 
     &:hover {
       transform: translateY(-5px);
@@ -16,10 +21,17 @@
   &__category-title {
     color: var(--color-text-primary);
     font-weight: 600;
-    margin-bottom: 1.5rem;
-    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
     border-bottom: 2px solid var(--color-border);
     position: relative;
+    font-size: 1rem;
+
+    @media (min-width: 768px) {
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      font-size: 1.1rem;
+    }
 
     &::after {
       content: '';
@@ -33,20 +45,30 @@
   }
 
   &__chips {
-    margin-top: 1rem;
+    margin-top: 0.75rem;
     display: flex;
     flex-wrap: wrap;
-    gap: 0.625rem;
+    gap: 0.5rem;
     flex: 1;
     align-content: flex-start;
+
+    @media (min-width: 768px) {
+      margin-top: 1rem;
+      gap: 0.625rem;
+    }
   }
 
   &__chip {
     border-color: var(--color-border) !important;
     color: var(--color-text-secondary) !important;
     font-weight: 500 !important;
+    font-size: 0.8rem !important;
     transition: all var(--transition-fast) !important;
     cursor: default;
+
+    @media (min-width: 768px) {
+      font-size: 0.875rem !important;
+    }
 
     &:hover {
       border-color: var(--color-primary) !important;

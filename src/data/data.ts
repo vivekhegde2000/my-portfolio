@@ -116,26 +116,25 @@ export const projects: Project[] = [
   },
   {
     id: "proj-3",
-    title: "Dashboard Manager",
-    description: "ABB client product : Worked on few enhancements and bug fixesin Enterprise dashboard manager built to manage product data, analytics, and reporting. Features dynamic charts, real-time updates, and role-based access control.",
-    technologies: ["React", "TypeScript", "Redux Toolkit", "Redux saga", "HighCharts", "Immer","Redux Dynamic Modules", "Jest"],
-    featured: true
-  },
-  {
-    id: "proj-4",
     title: "PMS",
     description: "Module of Assisto - HRMS : Performance Management System : Setting up goal management, performance reviews, and feedback features.",
     technologies: ["React", "TypeScript", "Scss", "Redux Toolkit", "Thunk", "Vite", "Vitest - RTL", "Axios", "MUI"],
     featured: true
   },
   {
+    id: "proj-4",
+    title: "Dashboard Manager",
+    description: "ABB client product : Worked on few enhancements and bug fixesin Enterprise dashboard manager built to manage product data, analytics, and reporting. Features dynamic charts, real-time updates, and role-based access control.",
+    technologies: ["React", "TypeScript", "Redux Toolkit", "Redux saga", "HighCharts", "Immer","Redux Dynamic Modules", "Jest"],
+    featured: true
+  },
+  {
     id: "proj-5",
-    title: "OTP generator",
-    description: "Custom OTP generator with customization of length and characters.",
-    technologies: ["React", "TypeScript", "Scss", "MUI", "Tailwind CSS"],
+    title: "Kanban Board",
+    description: "Kanban Board built using React dnd, dnd sortable.",
+    technologies: ["React", "TypeScript", "Scss", "MUI", "Tailwind CSS", "React Dnd", "Dnd Sortable"],
     featured: true,
-    githubUrl : "https://github.com/vivekhegde2000/otp-generator",
-    liveUrl:"https://otp-generator-v1-0-0.netlify.app/"
+    githubUrl : "https://github.com/vivekhegde2000/kanban-board",
   },
   {
     id: "proj-6",
@@ -148,11 +147,12 @@ export const projects: Project[] = [
   },
   {
     id: "proj-7",
-    title: "Kanban Board",
-    description: "Kanban Board built using React dnd, dnd sortable.",
-    technologies: ["React", "TypeScript", "Scss", "MUI", "Tailwind CSS", "React Dnd", "Dnd Sortable"],
+    title: "OTP generator",
+    description: "Custom OTP generator with customization of length and characters.",
+    technologies: ["React", "TypeScript", "Scss", "MUI", "Tailwind CSS"],
     featured: true,
-    githubUrl : "https://github.com/vivekhegde2000/kanban-board",
+    githubUrl : "https://github.com/vivekhegde2000/otp-generator",
+    liveUrl:"https://otp-generator-v1-0-0.netlify.app/"
   },
 ];
 

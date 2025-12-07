@@ -147,18 +147,20 @@ a {
 .section-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 1.5rem !important;
   
   @media (min-width: 768px) {
-    padding: 0 2rem;
+    padding: 0 2rem !important;
   }
 }
 
 .section-padding {
-  padding: 5rem 0;
+  padding-top: 5rem !important;
+  padding-bottom: 5rem !important;
   
   @media (min-width: 768px) {
-    padding: 6rem 0;
+    padding-top: 6rem !important;
+    padding-bottom: 6rem !important;
   }
 }
 

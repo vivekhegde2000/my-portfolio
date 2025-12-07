@@ -4,9 +4,13 @@
 
   &__card {
     text-align: center;
-    padding: 1rem 1rem 0 1rem;
+    padding: 1.25rem 1rem;
     height: 100%;
     transition: all var(--transition-base);
+
+    @media (min-width: 768px) {
+      padding: 1.5rem 1.25rem;
+    }
 
     &:hover {
       transform: translateY(-5px);
@@ -16,9 +20,9 @@
   }
 
   &__icon {
-    width: 70px;
-    height: 70px;
-    margin: 0 auto 1.5rem;
+    width: 55px;
+    height: 55px;
+    margin: 0 auto 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -26,8 +30,18 @@
     border-radius: 50%;
     color: white;
 
+    @media (min-width: 768px) {
+      width: 70px;
+      height: 70px;
+      margin: 0 auto 1.5rem;
+    }
+
     svg {
-      font-size: 2rem;
+      font-size: 1.5rem;
+
+      @media (min-width: 768px) {
+        font-size: 2rem;
+      }
     }
   }
 
@@ -35,33 +49,60 @@
     color: var(--color-text-primary);
     font-weight: 600;
     margin-bottom: 0.5rem;
+    font-size: 1rem;
+
+    @media (min-width: 768px) {
+      font-size: 1.15rem;
+    }
   }
 
   &__institution {
     color: var(--color-primary);
     font-weight: 500;
-    margin-top: 0.5rem !important;
-    margin-bottom: 1rem !important;
+    margin-top: 0.25rem !important;
+    margin-bottom: 0.75rem !important;
+    font-size: 0.9rem;
+
+    @media (min-width: 768px) {
+      margin-top: 0.5rem !important;
+      margin-bottom: 1rem !important;
+      font-size: 1rem;
+    }
   }
 
   &__details {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1.5rem;
-    padding-top: 1rem;
+    gap: 0.75rem;
+    padding-top: 0.75rem;
     border-top: 1px solid var(--color-border);
+
+    @media (min-width: 768px) {
+      gap: 1.5rem;
+      padding-top: 1rem;
+    }
   }
 
   &__detail {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.35rem;
     color: var(--color-text-secondary);
+    font-size: 0.8rem;
+
+    @media (min-width: 768px) {
+      gap: 0.5rem;
+      font-size: 0.9rem;
+    }
 
     svg {
-      font-size: 1rem;
+      font-size: 0.875rem;
       color: var(--color-text-muted);
+
+      @media (min-width: 768px) {
+        font-size: 1rem;
+      }
     }
   }
 }

@@ -1,6 +1,5 @@
 import { Box, Typography, Chip } from '@mui/material';
 import { motion } from 'framer-motion';
-import WorkIcon from '@mui/icons-material/Work';
 import SectionWrapper from '../../components/SectionWrapper/SectionWrapper';
 import { experiences } from '../../data/data';
 import './ExperienceSection.scss';
@@ -23,12 +22,6 @@ const ExperienceSection = () => {
             viewport={{ once: true }}
             className="experience__item"
           >
-            <Box className="experience__timeline">
-              <Box className="experience__dot">
-                <WorkIcon />
-              </Box>
-              <Box className="experience__line" />
-            </Box>
             
             <Box className="experience__content glass-card">
               <Box className="experience__header">

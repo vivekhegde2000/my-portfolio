@@ -1,28 +1,49 @@
 .footer {
   background: var(--color-bg-secondary);
-  padding: 2rem 0;
+  padding: 1.5rem 0;
+
+  @media (min-width: 768px) {
+    padding: 2rem 0;
+  }
 
   &__divider {
     background: var(--color-border) !important;
-    margin-bottom: 2rem !important;
+    margin-bottom: 1.5rem !important;
+
+    @media (min-width: 768px) {
+      margin-bottom: 2rem !important;
+    }
   }
 
   &__content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1rem;
     text-align: center;
+
+    @media (min-width: 768px) {
+      gap: 1.5rem;
+    }
   }
 
   &__logo {
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
+
+    @media (min-width: 768px) {
+      font-size: 1.5rem;
+    }
   }
 
   &__tagline {
     color: var(--color-text-muted);
     margin-top: 0.25rem;
+    font-size: 0.85rem;
+
+    @media (min-width: 768px) {
+      font-size: 0.9rem;
+    }
   }
 
   &__social {
@@ -34,6 +55,13 @@
     color: var(--color-text-secondary) !important;
     border: 1px solid var(--color-border) !important;
     transition: all var(--transition-fast) !important;
+    width: 38px !important;
+    height: 38px !important;
+
+    @media (min-width: 768px) {
+      width: 40px !important;
+      height: 40px !important;
+    }
 
     &:hover {
       color: var(--color-primary) !important;
@@ -49,12 +77,21 @@
     gap: 0.25rem;
     flex-wrap: wrap;
     justify-content: center;
+    font-size: 0.8rem;
+
+    @media (min-width: 768px) {
+      font-size: 0.875rem;
+    }
   }
 
   &__heart {
-    font-size: 1rem !important;
+    font-size: 0.875rem !important;
     color: var(--color-secondary);
     animation: pulse 1.5s infinite;
+
+    @media (min-width: 768px) {
+      font-size: 1rem !important;
+    }
   }
 }
 
