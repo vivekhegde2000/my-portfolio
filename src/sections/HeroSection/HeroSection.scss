@@ -93,10 +93,11 @@
     justify-content: center;
     min-height: 100vh;
     padding-top: 70px;
-    padding-bottom: 2rem;
+    padding-bottom: 4.5rem;
 
     @media (min-width: 768px) {
       padding-top: 80px;
+      padding-bottom: 5.5rem;
     }
   }
 
