@@ -10,7 +10,7 @@ import './AboutSection.scss';
 const highlights = [
   {
     icon: <WorkIcon />,
-    title: '2.5+ Years',
+    title: '3+ Years',
     description: 'Professional Experience',
   },
   {
@@ -73,15 +73,17 @@ const AboutSection = () => {
                   Passionate Frontend Developer
                 </Typography>
                 <Typography variant="body1" className="about__text">
-                  I'm a dedicated Frontend Developer based in <strong>Bengaluru, India</strong>, 
-                  with over 2.5 years of hands-on experience building modern web applications. 
-                  I specialize in <strong>React.js</strong> and <strong>TypeScript</strong>, 
-                  creating scalable, high-performance Single-Page Applications.
+                  I'm a dedicated Frontend Developer based in <strong>Bengaluru, India</strong>,
+                  with over 3 years of hands-on experience building modern web applications, and
+                  now expanding into fullstack development. I specialize in <strong>React.js</strong> and
+                  <strong> TypeScript</strong>, creating scalable, high-performance Single-Page Applications.
                 </Typography>
                 <Typography variant="body1" className="about__text">
-                  At <strong>NSP</strong>, I've had the opportunity to work on enterprise-level 
-                  projects, including developing a Design System component library published to NPM 
-                  and collaborating with <strong>ABB</strong> on a Product Dashboard Management system.
+                  At <strong>NSP</strong>, I've had the opportunity to work on enterprise-level
+                  projects, including developing a Design System component library published to NPM,
+                  guiding the frontend team on architecture and best practices, growing into backend
+                  development with Java Spring Boot and PostgreSQL, and collaborating with <strong>ABB</strong> on
+                  a Product Dashboard Management system.
                 </Typography>
                 <Typography variant="body1" className="about__text">
                   I'm passionate about writing clean, maintainable code and staying up-to-date 

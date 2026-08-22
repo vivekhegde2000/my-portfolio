@@ -8,7 +8,7 @@ export const personalInfo: PersonalInfo = {
   alternativePhone: "+91 7483179603",
   email: "vivekhegdehalasarige@gmail.com",
   linkedin: "https://www.linkedin.com/in/vivek-hegde-/",
-  summary: "Frontend Developer with 2.5+ years of experience in React.js and TypeScript. Specializing in building scalable, high-performance Single-Page Applications (SPAs). Proven ability to deliver robust, reusable UI component libraries within Agile teams. Proficient in Redux Toolkit and modern testing practices (Jest/Vitest)."
+  summary: "Frontend Developer with 3+ years of experience building scalable React.js/TypeScript SPAs, now expanding into fullstack development across the JavaScript ecosystem (Node.js, Express.js) with growing experience in Java Spring Boot and PostgreSQL. Also working in micro-frontend architecture (Module Federation) — led development of a component library published to NPM, and optimized a team-wide micro-frontend setup now used as the standard structure across the codebase. Proficient in Redux Toolkit, RESTful API integration, and modern testing practices (Jest/Vitest)."
 };
 
 export const skillCategories: SkillCategory[] = [
@@ -20,6 +20,22 @@ export const skillCategories: SkillCategory[] = [
       { name: "JavaScript (ES6+)" },
       { name: "Redux Toolkit" },
       { name: "Next.js" }
+    ]
+  },
+  {
+    category: "Architecture",
+    skills: [
+      { name: "Micro-Frontend Architecture" },
+      { name: "Module Federation (Webpack)" }
+    ]
+  },
+  {
+    category: "Backend",
+    skills: [
+      { name: "Node.js" },
+      { name: "Express.js" },
+      { name: "Prisma ORM" },
+      { name: "PostgreSQL" }
     ]
   },
   {
@@ -83,35 +99,33 @@ export const experiences: Experience[] = [
     period: "May 2023 – Present",
     location: "Bengaluru",
     highlights: [
-      "Built the core Single-Page Application (SPA) using React and TypeScript",
-      "Used Redux Toolkit and Thunk for reliable state management across the app",
-      "Designed and implemented responsive UI with SCSS and frameworks like MUI, Tailwind, Bootstrap",
-      "Integrated front-end with RESTful APIs for dynamic content presentation",
-      "Created Reusable Components that sped up feature development for the team",
-      "Optimized performance of existing React applications by utilizing best practices such as code splitting and lazy loading",
-      "Led development of a new Design System: A React/TypeScript component library published to NPM",
-      "Created custom components, forms, and interfaces for user interactions in React",
-      "Implemented unit test cases for all React components using Jest and React Testing Library",
-      "Progressed from Trainee to Associate Software Engineer and then to Software Engineer",
-      "Worked with ABB on developing, bug fixes and enhancing a Product Dashboard Management system"
+      "Built and scaled a production React/TypeScript SPA, applying code splitting and lazy loading to improve load performance",
+      "Contributed to migrating the Assisto HRMS platform to a micro-frontend architecture using Webpack Module Federation to expose/consume remote apps from the host; optimized the initial setup established by the tech lead, and the refined structure is now the standard adopted across the team's codebase",
+      "Recently began contributing to full-stack development on the Assisto platform, building backend services with Java Spring Boot microservices and a multi-tenant PostgreSQL database, alongside the existing React/TypeScript frontend",
+      "Led development of a reusable React/TypeScript component library published to NPM, reducing development time for new features across the team",
+      "Guide and mentor the frontend team on architecture decisions and best practices, acting as a de facto frontend lead",
+      "Implemented state management (Redux Toolkit, Thunk) and integrated RESTful APIs (Axios) for dynamic, data-driven UI",
+      "Delivered responsive interfaces using SCSS, MUI, Tailwind, and Bootstrap; wrote unit tests with Jest/RTL to maintain component reliability",
+      "Maintained code quality through Git-based version control, pull request reviews, and Agile/Scrum delivery practices",
+      "Progressed Trainee → Associate Software Engineer → Software Engineer; delivered enhancements and bug fixes on ABB's Product Dashboard Management system"
     ],
-    technologies: ["React", "TypeScript", "Redux Toolkit", "MUI", "SCSS", "Jest", "RTL"]
+    technologies: ["React", "TypeScript", "Redux Toolkit", "MUI", "SCSS", "Jest", "RTL", "Java Spring Boot", "PostgreSQL"]
   }
 ];
 
 export const projects: Project[] = [
   {
+    id: "proj-2",
+    title: "Assisto - HRMS",
+    description: "Data-integrated platform managing the complete Employee Life Cycle, Project Management, Timesheets, Reports, and Employee Onboarding. Migrated the frontend to a micro-frontend architecture with Webpack Module Federation, and expanded into full-stack development building backend microservices with Java Spring Boot and a multi-tenant PostgreSQL database.",
+    technologies: ["React", "TypeScript", "Scss", "Redux Toolkit", "Thunk", "Tailwind CSS", "Vite", "Vitest - RTL", "Axios", "WebSockets", "Java Spring Boot", "PostgreSQL"],
+    featured: true
+  },
+  {
     id: "proj-1",
     title: "Assisto UI Components",
     description: "A comprehensive React/TypeScript component library published to NPM, featuring reusable UI components with consistent styling, theming and accessibility. Used by multiple teams to accelerate development.",
     technologies: ["React", "TypeScript", "Storybook", "SCSS", "Fluent UI", "NPM"],
-    featured: true
-  },
-    {
-    id: "proj-2",
-    title: "Assisto - HRMS",
-    description: "Worked on Data Integrated platform to manage complete Employee Life cycle. Also the Project Management, Timesheets, Reports, Employee Onboarding and Management features.",
-    technologies: ["React", "TypeScript", "Scss", "Redux Toolkit", "Thunk" ,"Tailwind CSS", "Vite", "Vitest - RTL", "Axios", "WebSockets"],
     featured: true
   },
   {
@@ -189,8 +203,8 @@ export const awards: Award[] = [
   },
   {
     id: "award-2",
-    title: "Performance Excellence Award",
-    description: "Recognized for consistent, outstanding performance and dedication to delivering high-quality results."
+    title: "Performance Excellence Award (2024–2025, 2025–2026)",
+    description: "Recognized in two consecutive cycles for consistent, outstanding performance and dedication to delivering high-quality results."
   },
   {
     id: "award-3",
