@@ -2,28 +2,71 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Vivek Hegde - Frontend Developer with 3+ years of experience in React.js and TypeScript, expanding into fullstack development. Specializing in building scalable, high-performance Single-Page Applications." />
-    <meta name="keywords" content="Frontend Developer, React, TypeScript, JavaScript, Node.js, Java Spring Boot, Web Development, Bengaluru" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Vivek Hegde — Frontend Engineer (React &amp; TypeScript)</title>
+    <meta
+      name="description"
+      content="Vivek Hegde is a Bengaluru-based frontend engineer with 3+ years building scalable React & TypeScript apps — micro-frontends, component libraries and full-stack JavaScript."
+    />
     <meta name="author" content="Vivek Hegde" />
+    <meta name="theme-color" content="#0a0a1a" />
+    <meta name="color-scheme" content="dark" />
+    <link rel="canonical" href="__SITE_URL__/" />
 
-    <!-- Open Graph / Social Media -->
-    <meta property="og:title" content="Vivek Hegde | Frontend Developer" />
-    <meta property="og:description" content="Frontend Developer with 3+ years of experience in React.js and TypeScript, expanding into fullstack development." />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="preload" as="image" href="/images/profile-800.jpg" imagesrcset="/images/profile-480.jpg 480w, /images/profile-800.jpg 800w" imagesizes="(min-width: 1024px) 280px, 250px" />
+
+    <!-- Open Graph / social previews -->
     <meta property="og:type" content="website" />
-    
-    <!-- Google Fonts - Poppins -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <title>Vivek Hegde | Frontend Developer</title>
+    <meta property="og:site_name" content="Vivek Hegde" />
+    <meta property="og:title" content="Vivek Hegde — Frontend Engineer" />
+    <meta property="og:description" content="Fast, scalable React & TypeScript frontends — from micro-frontend platforms to component libraries." />
+    <meta property="og:url" content="__SITE_URL__/" />
+    <meta property="og:image" content="__SITE_URL__/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Vivek Hegde — Frontend Engineer, React & TypeScript" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Vivek Hegde — Frontend Engineer" />
+    <meta name="twitter:description" content="Fast, scalable React & TypeScript frontends — from micro-frontend platforms to component libraries." />
+    <meta name="twitter:image" content="__SITE_URL__/og-image.jpg" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Vivek Hegde",
+        "jobTitle": "Software Engineer",
+        "worksFor": { "@type": "Organization", "name": "NSP" },
+        "address": { "@type": "PostalAddress", "addressLocality": "Bengaluru", "addressCountry": "IN" },
+        "url": "__SITE_URL__/",
+        "image": "__SITE_URL__/images/profile-800.jpg",
+        "email": "mailto:vivekhegdehalasarige@gmail.com",
+        "alumniOf": [{ "@type": "CollegeOrUniversity", "name": "Jain University" }],
+        "knowsAbout": ["React", "TypeScript", "Micro-frontends", "Module Federation", "Node.js", "Express"],
+        "sameAs": ["https://www.linkedin.com/in/vivek-hegde-/", "https://github.com/vivekhegde2000"]
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
+    <noscript>
+      <p style="padding: 2rem; font-family: system-ui, sans-serif; color: #eef0ff; background: #0a0a1a">
+        Vivek Hegde — Frontend Engineer. This site needs JavaScript. Reach me at
+        <a style="color: #d4ff3a" href="mailto:vivekhegdehalasarige@gmail.com">vivekhegdehalasarige@gmail.com</a>.
+      </p>
+    </noscript>
+
+    <!-- Static copy of the contact form so Netlify detects it at deploy time. Never shown. -->
+    <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <textarea name="message"></textarea>
+      <input name="bot-field" />
+    </form>
+
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

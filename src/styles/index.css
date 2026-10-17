@@ -1,0 +1,459 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   Design tokens
+   ========================================================================== */
+@theme {
+  --color-ink: #0a0a1a;
+  --color-ink-2: #10112a;
+  --color-fg: #eef0ff;
+  --color-body: #c9cce6;
+  --color-muted: #a3a8c9;
+  --color-dim: #6f7499;
+  --color-line: rgb(255 255 255 / 0.09);
+  --color-line-strong: rgb(255 255 255 / 0.16);
+
+  --color-violet: #8b5cf6;
+  --color-violet-soft: #b9a4ff;
+  --color-cyan: #22d3ee;
+  --color-cyan-soft: #8beaf7;
+  --color-lime: #d4ff3a;
+  --color-pink: #f472b6;
+  --color-amber: #fbbf24;
+
+  --font-display: "Unbounded", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Geist Variable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "Geist Mono Variable", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  --ease-out-expo: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+:root {
+  --gradient-brand: linear-gradient(100deg, var(--color-violet-soft) 0%, var(--color-cyan) 55%, var(--color-lime) 100%);
+  color-scheme: dark;
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 96px;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-ink text-fg font-sans antialiased;
+    line-height: 1.6;
+    overflow-x: hidden;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: var(--color-violet);
+    color: #fff;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-cyan);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  img {
+    max-width: 100%;
+  }
+}
+
+/* ==========================================================================
+   Components
+   ========================================================================== */
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-[1200px] px-4 sm:px-6;
+  }
+
+  .text-gradient {
+    background: var(--gradient-brand);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .text-outline {
+    color: transparent;
+    -webkit-text-stroke: 1.4px var(--color-fg);
+  }
+
+  .eyebrow {
+    @apply font-mono text-xs tracking-[0.06em] uppercase;
+  }
+
+  /* --- Ambient background ------------------------------------------------ */
+  .aurora {
+    background:
+      radial-gradient(45% 35% at 8% 0%, rgb(139 92 246 / 0.3), transparent 70%),
+      radial-gradient(35% 30% at 100% 12%, rgb(34 211 238 / 0.18), transparent 70%),
+      radial-gradient(40% 35% at 85% 95%, rgb(244 114 182 / 0.12), transparent 70%),
+      radial-gradient(30% 25% at 0% 70%, rgb(212 255 58 / 0.06), transparent 70%);
+  }
+
+  .grid-backdrop {
+    background-image:
+      linear-gradient(var(--color-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--color-line) 1px, transparent 1px);
+    background-size: 72px 72px;
+    mask-image: radial-gradient(ellipse 60% 45% at 50% 0%, #000 20%, transparent 75%);
+  }
+
+  /* --- Spotlight card -----------------------------------------------------
+     Glow follows the pointer via --x / --y (set by useSpotlight).
+     Accent comes from --c, glow colour from --glow. */
+  .card {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--color-line);
+    border-radius: 22px;
+    background: rgb(255 255 255 / 0.035);
+    padding: 1.5rem;
+    transition: border-color 0.25s, transform 0.25s;
+  }
+  @media (min-width: 640px) {
+    .card {
+      padding: 1.625rem;
+    }
+  }
+  .card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+    background: radial-gradient(380px circle at var(--x, 50%) var(--y, 50%), var(--glow, rgb(139 92 246 / 0.18)), transparent 45%);
+  }
+  .card:hover {
+    border-color: var(--color-line-strong);
+  }
+  .card:hover::before {
+    opacity: 1;
+  }
+
+  .tint {
+    --glow: color-mix(in srgb, var(--c) 22%, transparent);
+    background: linear-gradient(160deg, color-mix(in srgb, var(--c) 13%, transparent), color-mix(in srgb, var(--c) 2%, transparent) 60%);
+  }
+
+  .tag {
+    @apply rounded-lg border border-line-strong px-2.5 py-1 font-mono text-xs text-muted;
+  }
+
+  /* --- Buttons ------------------------------------------------------------ */
+  .btn {
+    @apply inline-flex min-h-12 items-center justify-center gap-2.5 rounded-2xl border border-transparent px-5.5 text-[15px] font-semibold;
+    transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    will-change: transform;
+  }
+  .btn-primary {
+    @apply bg-lime text-ink;
+    box-shadow: 0 10px 30px -8px rgb(212 255 58 / 0.55);
+  }
+  .btn-primary:hover {
+    box-shadow: 0 14px 36px -8px rgb(212 255 58 / 0.75);
+  }
+  .btn-ghost {
+    @apply border-line-strong bg-white/[0.03] text-fg;
+  }
+  .btn-ghost:hover {
+    border-color: var(--color-violet-soft);
+    background: rgb(139 92 246 / 0.1);
+  }
+
+  .icon-btn {
+    @apply grid size-11 place-items-center rounded-xl border border-line text-muted;
+    transition: color 0.2s, border-color 0.2s, background-color 0.2s;
+  }
+  .icon-btn:hover {
+    @apply text-fg;
+    border-color: var(--color-cyan);
+    background: rgb(34 211 238 / 0.08);
+  }
+
+  .pill {
+    @apply inline-flex items-center gap-2 rounded-full border border-line-strong bg-ink-2/80 text-[13px] backdrop-blur-md;
+  }
+
+  /* --- Holographic photo card -------------------------------------------- */
+  .holo-card {
+    position: relative;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    border-radius: 24px;
+    transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+    transition: transform 0.2s ease-out;
+    box-shadow: 0 30px 80px -15px rgb(139 92 246 / 0.6), 0 0 0 1px rgb(255 255 255 / 0.18);
+  }
+  .holo-foil {
+    position: absolute;
+    inset: 0;
+    mix-blend-mode: color-dodge;
+    opacity: 0.2;
+    background: conic-gradient(from 90deg at var(--mx, 50%) var(--my, 50%), #f472b6, #22d3ee, #d4ff3a, #8b5cf6, #f472b6);
+  }
+  .holo-sheen {
+    position: absolute;
+    inset: 0;
+    mix-blend-mode: overlay;
+    background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgb(255 255 255 / 0.38), transparent 42%);
+  }
+
+  .float-chip {
+    animation: float-y 6s ease-in-out infinite;
+    transition: opacity 0.4s;
+  }
+
+  .orbit-label {
+    @apply pointer-events-none absolute top-0 left-0 inline-flex items-center gap-2 rounded-full border border-line-strong bg-ink-2/80 px-3 py-1.5 text-xs whitespace-nowrap backdrop-blur-md;
+    transition: opacity 0.3s;
+  }
+
+  /* --- Tech bands ---------------------------------------------------------- */
+  .band-track {
+    display: inline-flex;
+    animation: marquee 30s linear infinite;
+  }
+  .band-track.reverse {
+    animation-direction: reverse;
+    animation-duration: 36s;
+  }
+
+  /* --- Scroll-lit statement ---------------------------------------------- */
+  .lit-word {
+    opacity: 0.18;
+    transition: opacity 0.3s;
+  }
+  .lit-word.is-lit {
+    opacity: 1;
+  }
+
+  /* --- Career path ----------------------------------------------------------
+     Vertical on phones, horizontal from md. --p (0..1) is set on scroll. */
+  .path-track,
+  .path-fill {
+    position: absolute;
+    left: 10px;
+    top: 14px;
+    width: 2px;
+  }
+  .path-track {
+    bottom: 14px;
+    background: var(--color-line-strong);
+  }
+  .path-fill {
+    height: calc(var(--p, 0) * (100% - 28px));
+    background: linear-gradient(180deg, var(--color-violet-soft), var(--color-cyan) 55%, var(--color-lime));
+    box-shadow: 0 0 18px rgb(34 211 238 / 0.7);
+  }
+  @media (min-width: 768px) {
+    .path-track,
+    .path-fill {
+      left: 0;
+      top: 22px;
+      height: 2px;
+    }
+    .path-track {
+      right: 0;
+      bottom: auto;
+      width: auto;
+    }
+    .path-fill {
+      width: calc(var(--p, 0) * 100%);
+      background: var(--gradient-brand);
+    }
+  }
+
+  .path-node::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 9999px;
+    background: var(--color-ink);
+    border: 2px solid var(--c);
+    transition: background-color 0.4s, box-shadow 0.4s;
+  }
+  .path-node.is-lit::before {
+    background: var(--c);
+    box-shadow: 0 0 0 8px color-mix(in srgb, var(--c) 20%, transparent);
+  }
+  @media (min-width: 768px) {
+    .path-node::before {
+      top: 12px;
+    }
+  }
+
+  /* --- Contribution cards ---------------------------------------------------- */
+  .contribution {
+    border-top: 2px solid var(--c);
+    animation: pop-in 0.45s var(--ease-out-expo) both;
+  }
+
+  /* --- Hover-fill rows ------------------------------------------------------- */
+  .fill-row::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--c);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.5s cubic-bezier(0.7, 0, 0.2, 1);
+  }
+  .fill-row:hover::before {
+    transform: scaleY(1);
+  }
+  .fill-row:hover,
+  .fill-row:hover .fill-row-muted {
+    color: var(--color-ink);
+  }
+
+  /* --- Tilt cards ------------------------------------------------------------ */
+  .tilt-card {
+    transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+    transition: transform 0.2s ease-out, border-color 0.3s, box-shadow 0.3s;
+  }
+  .tilt-card:hover,
+  .tilt-card:focus-within {
+    border-color: var(--c);
+    box-shadow: 0 24px 60px -20px var(--c);
+  }
+
+  /* --- Form ------------------------------------------------------------------ */
+  .field {
+    @apply w-full rounded-xl border border-line-strong bg-ink/55 px-3.5 py-3 text-[15px] text-fg outline-none placeholder:text-dim;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .field:focus {
+    border-color: var(--color-violet-soft);
+    box-shadow: 0 0 0 4px rgb(139 92 246 / 0.18);
+  }
+  .field[aria-invalid="true"] {
+    border-color: var(--color-pink);
+  }
+
+  /* --- Scroll reveal -------------------------------------------------------- */
+  .reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
+    transition-delay: var(--delay, 0ms);
+  }
+  .reveal.is-in {
+    opacity: 1;
+    transform: none;
+  }
+
+  .rise-line > span {
+    display: inline-block;
+    transform: translateY(105%);
+    animation: rise 1s var(--ease-out-expo) forwards;
+  }
+}
+
+/* ==========================================================================
+   Keyframes
+   ========================================================================== */
+@keyframes rise {
+  to {
+    transform: none;
+  }
+}
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+@keyframes float-y {
+  50% {
+    transform: translateY(-10px);
+  }
+}
+@keyframes ping-lime {
+  0% {
+    box-shadow: 0 0 0 0 rgb(212 255 58 / 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 9px rgb(212 255 58 / 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgb(212 255 58 / 0);
+  }
+}
+@keyframes word-in {
+  from {
+    opacity: 0;
+    transform: translateY(60%);
+  }
+}
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes sheet-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.98);
+  }
+}
+
+@utility animate-ping-lime {
+  animation: ping-lime 2s infinite;
+}
+@utility animate-fade-in {
+  animation: fade-in 0.2s ease-out both;
+}
+@utility animate-sheet-in {
+  animation: sheet-in 0.25s var(--ease-out-expo) both;
+}
+
+/* ==========================================================================
+   Reduced motion — keep everything visible and still
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+  .rise-line > span {
+    transform: none;
+  }
+  .lit-word {
+    opacity: 1;
+  }
+  .band-track,
+  .float-chip {
+    animation: none !important;
+  }
+}
